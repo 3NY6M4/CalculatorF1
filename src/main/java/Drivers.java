@@ -1,7 +1,7 @@
 public class Drivers{
 
-    private int points;
-    private double price;
+     int points;
+     double price;
 
     public Drivers(int points, double price) {
         this.points = points;

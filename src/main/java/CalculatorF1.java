@@ -1,5 +1,3 @@
-import org.w3c.dom.ls.LSOutput;
-
 public class CalculatorF1 {
 
     public static void main(String[] args) {
@@ -42,8 +40,30 @@ public class CalculatorF1 {
         Constructors Williams = new Constructors(10, 6.5);
         Constructors Hass = new Constructors(5, 6.4);
 
-        System.out.println(Hass.getPoints());
+        System.out.println("Hass" + Hass.getPoints());
 
+        Drivers[] drivers = {Verstappen, Perez, Leclerc, Sainz, Russell, Hamilton,
+                Norris, Ricciardo, Bottas, Guanyu, Gasly, Tsunoda, Schumacher, Magnussen,
+                Vettel, Stroll, Alonso, Ocon, Albon, Latifi};
+
+        for (int i = 0; i < drivers.length; i++) {
+            if (drivers[i].points > drivers[i++].points) {
+                System.out.println(drivers[i]);
+            } else if (drivers[i].points == drivers[i++].points) {
+                System.out.println(drivers[i].price < drivers[i++].price);
+            }
+
+            Constructors[] constructors = {RedBull, Mercedes, Ferrari, McLaren, Alpine, AstonMartin, AlphaTauri, AlfaRomeo, Williams, Hass};
+
+            for (int j = 0; j < constructors.length; j++) {
+                if (constructors[j].points > constructors[j++].points) {
+                    System.out.println(constructors[j]);
+                } else if (constructors[j].points == constructors[j++].points) {
+                    System.out.println(constructors[j].price < constructors[j++].price);
+                }
+            }
+//    public void driver(){
+        }
     }
 }
 

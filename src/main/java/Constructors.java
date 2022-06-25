@@ -1,7 +1,7 @@
 public class Constructors {
 
-    private int points;
-    private double price;
+    int points;
+    double price;
 
     public Constructors(int points, double price) {
         this.points = points;
