@@ -70,10 +70,13 @@ public class CalculatorF1 {
         drivers.put(Latifi.getPoints(), Latifi.getPrice());
 
         for (int i = 0; i < drivers.size(); i++) {
-//            if (drivers.get(Deivers.) {
-                System.out.println(drivers);
-//            } else if (drivers.get(i).getPoints() == drivers.get(i++).getPoints()) {
-//                System.out.println(drivers.get(i).getPrice() < drivers.get(i++).getPrice() || drivers.get(i++).getPrice() < drivers.get(i).getPrice());
+//            if(i.getPoints() > i+1.getPoints()) {
+//             team.put(i)
+            System.out.println(drivers);
+//            } else if(i.getPoints() == i+1.getPoints()) {
+//                  (i.getPrice() < i+1.getPrice() || i+1.getPrice() < i.getPrice()) {
+//                  team.put(i.getPrice(min);
+//                  }
 //            }
 
             Constructors[] constructors = {RedBull, Mercedes, Ferrari, McLaren, Alpine, AstonMartin, AlphaTauri, AlfaRomeo, Williams, Hass};
