@@ -1,9 +1,9 @@
-public class Drivers{
+public class Drivers {
 
-     int points;
-     double price;
+    private Integer points;
+    private Double price;
 
-    public Drivers(int points, double price) {
+    public Drivers(Integer points, Double price) {
         this.points = points;
         this.price = price;
     }
@@ -12,7 +12,7 @@ public class Drivers{
         return points;
     }
 
-    public void setPoints(int points) {
+    public void setPoints(Integer points) {
         this.points = points;
     }
 
@@ -20,7 +20,7 @@ public class Drivers{
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 }

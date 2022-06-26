@@ -1,3 +1,8 @@
+import com.sun.jdi.Value;
+
+import java.sql.Driver;
+import java.util.*;
+
 public class CalculatorF1 {
 
     public static void main(String[] args) {
@@ -42,29 +47,45 @@ public class CalculatorF1 {
 
         System.out.println("Hass" + Hass.getPoints());
 
-        Drivers[] drivers = {Verstappen, Perez, Leclerc, Sainz, Russell, Hamilton,
-                Norris, Ricciardo, Bottas, Guanyu, Gasly, Tsunoda, Schumacher, Magnussen,
-                Vettel, Stroll, Alonso, Ocon, Albon, Latifi};
+        Map<Integer, Double>drivers = new HashMap<>();
+        drivers.put(Verstappen.getPoints(), Verstappen.getPrice());
+        drivers.put(Perez.getPoints(),Perez.getPrice());
+        drivers.put(Leclerc.getPoints(), Leclerc.getPrice());
+        drivers.put(Sainz.getPoints(), Sainz.getPrice());
+        drivers.put(Russell.getPoints(), Russell.getPrice());
+        drivers.put(Hamilton.getPoints(), Hamilton.getPrice());
+        drivers.put(Norris.getPoints(), Norris.getPrice());
+        drivers.put(Ricciardo.getPoints(), Ricciardo.getPrice());
+        drivers.put(Bottas.getPoints(), Bottas.getPrice());
+        drivers.put(Guanyu.getPoints(), Guanyu.getPrice());
+        drivers.put(Gasly.getPoints(), Gasly.getPrice());
+        drivers.put(Tsunoda.getPoints(), Tsunoda.getPrice());
+        drivers.put(Schumacher.getPoints(), Schumacher.getPrice());
+        drivers.put(Magnussen.getPoints(), Magnussen.getPrice());
+        drivers.put(Vettel.getPoints(), Vettel.getPrice());
+        drivers.put(Stroll.getPoints(), Stroll.getPrice());
+        drivers.put(Alonso.getPoints(), Alonso.getPrice());
+        drivers.put(Ocon.getPoints(), Ocon.getPrice());
+        drivers.put(Albon.getPoints(), Albon.getPrice());
+        drivers.put(Latifi.getPoints(), Latifi.getPrice());
 
-        for (int i = 0; i < drivers.length; i++) {
-            if (drivers[i].points > drivers[i++].points) {
-                System.out.println(drivers[i]);
-            } else if (drivers[i].points == drivers[i++].points) {
-                System.out.println(drivers[i].price < drivers[i++].price);
-            }
+        for (int i = 0; i < drivers.size(); i++) {
+//            if (drivers.get(Deivers.) {
+                System.out.println(drivers);
+//            } else if (drivers.get(i).getPoints() == drivers.get(i++).getPoints()) {
+//                System.out.println(drivers.get(i).getPrice() < drivers.get(i++).getPrice() || drivers.get(i++).getPrice() < drivers.get(i).getPrice());
+//            }
 
             Constructors[] constructors = {RedBull, Mercedes, Ferrari, McLaren, Alpine, AstonMartin, AlphaTauri, AlfaRomeo, Williams, Hass};
 
-            for (int j = 0; j < constructors.length; j++) {
-                if (constructors[j].points > constructors[j++].points) {
-                    System.out.println(constructors[j]);
-                } else if (constructors[j].points == constructors[j++].points) {
-                    System.out.println(constructors[j].price < constructors[j++].price);
-                }
-            }
+//            for (int j = 0; j < constructors.length; j++) {
+//                if (constructors[j].points > constructors[j++].points) {
+//                    System.out.println(constructors[j]);
+//                } else if (constructors[j].points == constructors[j++].points) {
+//                    System.out.println(constructors[j].price < constructors[j++].price);
+//                }
+//            }
 //    public void driver(){
         }
     }
 }
-
-
