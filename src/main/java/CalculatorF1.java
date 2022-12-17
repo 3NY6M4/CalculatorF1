@@ -1,7 +1,5 @@
-import com.sun.jdi.Value;
-
-import java.sql.Driver;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CalculatorF1 {
 
@@ -16,7 +14,7 @@ public class CalculatorF1 {
         Drivers Perez = new Drivers(65, 18.3);
         Drivers Sainz = new Drivers(65, 17.2);
         Drivers Norris = new Drivers(65, 15.8);
-        Drivers Ricciardo = new Drivers(80, 13.5);
+        Drivers Piastri = new Drivers(80, 13.5);
         Drivers Gasly = new Drivers(70, 12.9);
         Drivers Ocon = new Drivers(70, 12.4);
         Drivers Alonso = new Drivers(65, 12.2);
@@ -26,11 +24,9 @@ public class CalculatorF1 {
         Drivers Guanyu = new Drivers(60, 8.4);
         Drivers Tsunoda = new Drivers(60, 8.3);
         Drivers Albon = new Drivers(60, 7.8);
-        Drivers Latifi = new Drivers(60, 6.6);
-        Drivers Schumacher = new Drivers(60, 6.2);
+        Drivers de_Vries = new Drivers(60, 6.6);
+        Drivers Hülkenberg = new Drivers(60, 6.2);
         Drivers Magnussen = new Drivers(60, 6.1);
-
-        System.out.println("Verstappen" + "\n" + "Points: " + Verstappen.getPoints() + " Price: " + Verstappen.getPrice());
 
 //  Constructors
 
@@ -45,50 +41,90 @@ public class CalculatorF1 {
         Constructors Williams = new Constructors(10, 6.5);
         Constructors Hass = new Constructors(5, 6.4);
 
-        System.out.println("Hass" + Hass.getPoints());
+        List<Drivers> drivers = new ArrayList<>();
+        drivers.add(new Drivers(Verstappen.getPoints(), Verstappen.getPrice()));
+        drivers.add(new Drivers(Perez.getPoints(),Perez.getPrice()));
+        drivers.add(new Drivers(Leclerc.getPoints(), Leclerc.getPrice()));
+        drivers.add(new Drivers(Sainz.getPoints(), Sainz.getPrice()));
+        drivers.add(new Drivers(Russell.getPoints(), Russell.getPrice()));
+        drivers.add(new Drivers(Hamilton.getPoints(), Hamilton.getPrice()));
+        drivers.add(new Drivers(Norris.getPoints(), Norris.getPrice()));
+        drivers.add(new Drivers(Piastri.getPoints(), Piastri.getPrice()));
+        drivers.add(new Drivers(Bottas.getPoints(), Bottas.getPrice()));
+        drivers.add(new Drivers(Guanyu.getPoints(), Guanyu.getPrice()));
+        drivers.add(new Drivers(Gasly.getPoints(), Gasly.getPrice()));
+        drivers.add(new Drivers(Tsunoda.getPoints(), Tsunoda.getPrice()));
+        drivers.add(new Drivers(Hülkenberg.getPoints(), Hülkenberg.getPrice()));
+        drivers.add(new Drivers(Magnussen.getPoints(), Magnussen.getPrice()));
+        drivers.add(new Drivers(Vettel.getPoints(), Vettel.getPrice()));
+        drivers.add(new Drivers(Stroll.getPoints(), Stroll.getPrice()));
+        drivers.add(new Drivers(Alonso.getPoints(), Alonso.getPrice()));
+        drivers.add(new Drivers(Ocon.getPoints(), Ocon.getPrice()));
+        drivers.add(new Drivers(Albon.getPoints(), Albon.getPrice()));
+        drivers.add(new Drivers(de_Vries.getPoints(), de_Vries.getPrice()));
 
-        Map<Integer, Double>drivers = new HashMap<>();
-        drivers.put(Verstappen.getPoints(), Verstappen.getPrice());
-        drivers.put(Perez.getPoints(),Perez.getPrice());
-        drivers.put(Leclerc.getPoints(), Leclerc.getPrice());
-        drivers.put(Sainz.getPoints(), Sainz.getPrice());
-        drivers.put(Russell.getPoints(), Russell.getPrice());
-        drivers.put(Hamilton.getPoints(), Hamilton.getPrice());
-        drivers.put(Norris.getPoints(), Norris.getPrice());
-        drivers.put(Ricciardo.getPoints(), Ricciardo.getPrice());
-        drivers.put(Bottas.getPoints(), Bottas.getPrice());
-        drivers.put(Guanyu.getPoints(), Guanyu.getPrice());
-        drivers.put(Gasly.getPoints(), Gasly.getPrice());
-        drivers.put(Tsunoda.getPoints(), Tsunoda.getPrice());
-        drivers.put(Schumacher.getPoints(), Schumacher.getPrice());
-        drivers.put(Magnussen.getPoints(), Magnussen.getPrice());
-        drivers.put(Vettel.getPoints(), Vettel.getPrice());
-        drivers.put(Stroll.getPoints(), Stroll.getPrice());
-        drivers.put(Alonso.getPoints(), Alonso.getPrice());
-        drivers.put(Ocon.getPoints(), Ocon.getPrice());
-        drivers.put(Albon.getPoints(), Albon.getPrice());
-        drivers.put(Latifi.getPoints(), Latifi.getPrice());
+        List<Constructors> constructors = new ArrayList<>();
+        constructors.add(new Constructors(Mercedes.getPoints(), Mercedes.getPrice()));
+        constructors.add(new Constructors(RedBull.getPoints(),RedBull.getPrice()));
+        constructors.add(new Constructors(Ferrari.getPoints(), Ferrari.getPrice()));
+        constructors.add(new Constructors(McLaren.getPoints(), McLaren.getPrice()));
+        constructors.add(new Constructors(Alpine.getPoints(), Alpine.getPrice()));
+        constructors.add(new Constructors(AstonMartin.getPoints(), AstonMartin.getPrice()));
+        constructors.add(new Constructors(AlphaTauri.getPoints(), AlphaTauri.getPrice()));
+        constructors.add(new Constructors(AlfaRomeo.getPoints(), AlfaRomeo.getPrice()));
+        constructors.add(new Constructors(Williams.getPoints(), Williams.getPrice()));
+        constructors.add(new Constructors(Hass.getPoints(), Hass.getPrice()));
 
+        List<Object> combinations = new ArrayList<>();
+
+//  Pętla po rekordach z pierwszego zbioru (drivers)
         for (int i = 0; i < drivers.size(); i++) {
-//            if(i.getPoints() > i+1.getPoints()) {
-//             team.put(i)
-            System.out.println(drivers);
-//            } else if(i.getPoints() == i+1.getPoints()) {
-//                  (i.getPrice() < i+1.getPrice() || i+1.getPrice() < i.getPrice()) {
-//                  team.put(i.getPrice(min);
-//                  }
-//            }
+            for (int j = i + 1; j < drivers.size(); j++) {
+                for (int k = j + 1; k < drivers.size(); k++) {
+                    for (int l = k + 1; l < drivers.size(); l++) {
+                        for (int m = l + 1; m < drivers.size(); m++) {
 
-            Constructors[] constructors = {RedBull, Mercedes, Ferrari, McLaren, Alpine, AstonMartin, AlphaTauri, AlfaRomeo, Williams, Hass};
+//  Pętla po rekordach z drugiego zbioru (constructors)
+                            for (int n = m +1; n <constructors.size(); n++) { // for (Constructors c : constructors) {
 
-//            for (int j = 0; j < constructors.length; j++) {
-//                if (constructors[j].points > constructors[j++].points) {
-//                    System.out.println(constructors[j]);
-//                } else if (constructors[j].points == constructors[j++].points) {
-//                    System.out.println(constructors[j].price < constructors[j++].price);
-//                }
-//            }
-//    public void driver(){
+//  Jeśli cena jest mniejsza lub równa 100, dodaj kombinację do listy
+
+        if (drivers.get(i).getPrice() + drivers.get(j).getPrice() + drivers.get(k).getPrice() + drivers.get(l).getPrice() + drivers.get(m).getPrice() + constructors.get(n).getPrice() <= 100) {
+            List<Object> combination = new ArrayList<>();
+            combination.add(drivers.get(i));
+            combination.add(drivers.get(j));
+            combination.add(drivers.get(k));
+            combination.add(drivers.get(l));
+            combination.add(drivers.get(m));
+            combination.add(constructors.get(n));
+            combinations.add(combination);
+                        }
+                    }
+                }
+            }
+        }
+
+// Znajdź kombinację z największą ilością punktów
+        List<Object> bestCombination = null;
+        int bestPoints = 0;
+        for (List<Object> combination : combinations) {
+            int points = 0;
+            for (Object o : combination) {
+                if (o instanceof Drivers) {
+                    points += ((Drivers) o).getPoints();
+                } else if (o instanceof Constructors) {
+                    points += ((Constructors) o).getPoints();
+                }
+            }
+            if (points > bestPoints) {
+                bestCombination = combination;
+                bestPoints = points;
+            }
+        }
+
+        // Wypisanie wybranej kombinacji
+        System.out.println("Wybrana kombinacja: " + bestCombination);
+    }
         }
     }
 }

@@ -1,9 +1,9 @@
-public class Constructors {
+public class Combinations {
 
-    private int points;
-    private double price;
+    int points;
+    double price;
 
-    public Constructors(int points, double price) {
+    public Combinations(int points, double price) {
         this.points = points;
         this.price = price;
     }
@@ -12,7 +12,7 @@ public class Constructors {
         return points;
     }
 
-    public void setPoints(int points) {
+    public void setPoints(Integer points) {
         this.points = points;
     }
 
@@ -20,7 +20,7 @@ public class Constructors {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 }
