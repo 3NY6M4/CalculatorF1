@@ -1,11 +1,21 @@
 public class Drivers {
 
-    int points;
-    double price;
+    private String driverName;
+    private int points;
+    private double price;
 
-    public Drivers(int points, double price) {
+    public Drivers(String driverName, int points, double price) {
+        this.driverName = driverName;
         this.points = points;
         this.price = price;
+    }
+
+    public String getName() {
+        return driverName;
+    }
+
+    public void setName(String driverName) {
+        this.driverName = driverName;
     }
 
     public int getPoints() {

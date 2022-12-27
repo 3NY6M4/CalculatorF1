@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.List;
 
 public class CalculatorF1 {
@@ -7,124 +6,112 @@ public class CalculatorF1 {
 
 //  Drivers
 
-        Drivers Verstappen = new Drivers(65, 30.5);
-        Drivers Hamilton = new Drivers(73, 30.0);
-        Drivers Russell = new Drivers(65, 23.7);
-        Drivers Leclerc = new Drivers(65, 19.0);
-        Drivers Perez = new Drivers(65, 18.3);
-        Drivers Sainz = new Drivers(65, 17.2);
-        Drivers Norris = new Drivers(65, 15.8);
-        Drivers Piastri = new Drivers(80, 13.5);
-        Drivers Gasly = new Drivers(70, 12.9);
-        Drivers Ocon = new Drivers(70, 12.4);
-        Drivers Alonso = new Drivers(65, 12.2);
-        Drivers Vettel = new Drivers(60, 11.4);
-        Drivers Bottas = new Drivers(60, 9.6);
-        Drivers Stroll = new Drivers(60, 9.0);
-        Drivers Guanyu = new Drivers(60, 8.4);
-        Drivers Tsunoda = new Drivers(60, 8.3);
-        Drivers Albon = new Drivers(60, 7.8);
-        Drivers de_Vries = new Drivers(60, 6.6);
-        Drivers Hülkenberg = new Drivers(60, 6.2);
-        Drivers Magnussen = new Drivers(60, 6.1);
+        Drivers Verstappen = new Drivers("Verstappen", 73, 30.5);
+        Drivers Hamilton = new Drivers("Hamilton", 73, 30.0);
+        Drivers Russell = new Drivers("Russell", 65, 23.7);
+        Drivers Leclerc = new Drivers("Leclerc", 65, 19.0);
+        Drivers Perez = new Drivers("Perez", 19, 18.3);
+        Drivers Sainz = new Drivers("Sainz", 14, 17.2);
+        Drivers Norris = new Drivers("Norris", 65, 15.8);
+        Drivers Piastri = new Drivers("Piastri", 80, 13.5);
+        Drivers Gasly = new Drivers("Gasly", 19, 12.9);
+        Drivers Ocon = new Drivers("Ocon", 9, 12.4);
+        Drivers Alonso = new Drivers("Alonso", 2, 12.2);
+        Drivers Sargent = new Drivers("Sargent", 17, 11.4);
+        Drivers Bottas = new Drivers("Bottas", 15, 9.6);
+        Drivers Stroll = new Drivers("Stroll", 0, 9.0);
+        Drivers Guanyu = new Drivers("Guanyu", 200, 8.4);
+        Drivers Tsunoda = new Drivers("Tsunoda", 200, 8.3);
+        Drivers Albon = new Drivers("Albon", 200, 7.8);
+        Drivers de_Vries = new Drivers("de_Vries", 200, 6.6);
+        Drivers Hülkenberg = new Drivers("Hülkenberg", 200, 6.2);
+        Drivers Magnussen = new Drivers("Magnussen", 200, 6.1);
 
 //  Constructors
 
-        Constructors Mercedes = new Constructors(32, 33.7);
-        Constructors RedBull = new Constructors(32, 32.3);
-        Constructors Ferrari = new Constructors(32, 25.8);
-        Constructors McLaren = new Constructors(30, 17.6);
-        Constructors Alpine = new Constructors(30, 13.9);
-        Constructors AstonMartin = new Constructors(30, 11.0);
-        Constructors AlphaTauri = new Constructors(25, 10.1);
-        Constructors AlfaRomeo = new Constructors(20, 8.7);
-        Constructors Williams = new Constructors(10, 6.5);
-        Constructors Hass = new Constructors(5, 6.4);
+        Constructors Mercedes = new Constructors("Mercedes", 32, 33.7);
+        Constructors RedBull = new Constructors("RedBull", 32, 32.3);
+        Constructors Ferrari = new Constructors("Ferrari", 32, 25.8);
+        Constructors McLaren = new Constructors("McLaren", 25, 17.6);
+        Constructors Alpine = new Constructors("Alpine", 28, 13.9);
+        Constructors AstonMartin = new Constructors("AstonMartin", 30, 11.0);
+        Constructors AlphaTauri = new Constructors("AlphaTauri", 25, 10.1);
+        Constructors AlfaRomeo = new Constructors("AlfaRomeo", 20, 8.7);
+        Constructors Williams = new Constructors("Williams", 100, 6.5);
+        Constructors Hass = new Constructors("Hass", 100, 6.4);
 
-        List<Drivers> drivers = new ArrayList<>();
-        drivers.add(new Drivers(Verstappen.getPoints(), Verstappen.getPrice()));
-        drivers.add(new Drivers(Perez.getPoints(),Perez.getPrice()));
-        drivers.add(new Drivers(Leclerc.getPoints(), Leclerc.getPrice()));
-        drivers.add(new Drivers(Sainz.getPoints(), Sainz.getPrice()));
-        drivers.add(new Drivers(Russell.getPoints(), Russell.getPrice()));
-        drivers.add(new Drivers(Hamilton.getPoints(), Hamilton.getPrice()));
-        drivers.add(new Drivers(Norris.getPoints(), Norris.getPrice()));
-        drivers.add(new Drivers(Piastri.getPoints(), Piastri.getPrice()));
-        drivers.add(new Drivers(Bottas.getPoints(), Bottas.getPrice()));
-        drivers.add(new Drivers(Guanyu.getPoints(), Guanyu.getPrice()));
-        drivers.add(new Drivers(Gasly.getPoints(), Gasly.getPrice()));
-        drivers.add(new Drivers(Tsunoda.getPoints(), Tsunoda.getPrice()));
-        drivers.add(new Drivers(Hülkenberg.getPoints(), Hülkenberg.getPrice()));
-        drivers.add(new Drivers(Magnussen.getPoints(), Magnussen.getPrice()));
-        drivers.add(new Drivers(Vettel.getPoints(), Vettel.getPrice()));
-        drivers.add(new Drivers(Stroll.getPoints(), Stroll.getPrice()));
-        drivers.add(new Drivers(Alonso.getPoints(), Alonso.getPrice()));
-        drivers.add(new Drivers(Ocon.getPoints(), Ocon.getPrice()));
-        drivers.add(new Drivers(Albon.getPoints(), Albon.getPrice()));
-        drivers.add(new Drivers(de_Vries.getPoints(), de_Vries.getPrice()));
+        List<Drivers> drivers = List.of(
+                Verstappen, Perez,
+                Hamilton, Russell,
+                Leclerc, Sainz,
+                Norris, Piastri,
+                Gasly, Ocon,
+                Alonso, Stroll,
+                Albon, Sargent,
+                Bottas, Guanyu,
+                de_Vries, Tsunoda,
+                Magnussen, Hülkenberg);
 
-        List<Constructors> constructors = new ArrayList<>();
-        constructors.add(new Constructors(Mercedes.getPoints(), Mercedes.getPrice()));
-        constructors.add(new Constructors(RedBull.getPoints(),RedBull.getPrice()));
-        constructors.add(new Constructors(Ferrari.getPoints(), Ferrari.getPrice()));
-        constructors.add(new Constructors(McLaren.getPoints(), McLaren.getPrice()));
-        constructors.add(new Constructors(Alpine.getPoints(), Alpine.getPrice()));
-        constructors.add(new Constructors(AstonMartin.getPoints(), AstonMartin.getPrice()));
-        constructors.add(new Constructors(AlphaTauri.getPoints(), AlphaTauri.getPrice()));
-        constructors.add(new Constructors(AlfaRomeo.getPoints(), AlfaRomeo.getPrice()));
-        constructors.add(new Constructors(Williams.getPoints(), Williams.getPrice()));
-        constructors.add(new Constructors(Hass.getPoints(), Hass.getPrice()));
+        List<Constructors> constructors = List.of(
+                RedBull,
+                Mercedes,
+                Ferrari,
+                McLaren,
+                Alpine,
+                AstonMartin,
+                Williams,
+                AlfaRomeo,
+                AlphaTauri,
+                Hass);
 
-        List<Object> combinations = new ArrayList<>();
+        int maxSum = 0;
+        double price = 0.0;
+        String bestCombination = "";
 
-//  Pętla po rekordach z pierwszego zbioru (drivers)
+        // Loop through all combinations of 3 entries from collection1
         for (int i = 0; i < drivers.size(); i++) {
             for (int j = i + 1; j < drivers.size(); j++) {
                 for (int k = j + 1; k < drivers.size(); k++) {
                     for (int l = k + 1; l < drivers.size(); l++) {
                         for (int m = l + 1; m < drivers.size(); m++) {
+                            Drivers drivers1 = drivers.get(i);
+                            Drivers drivers2 = drivers.get(j);
+                            Drivers drivers3 = drivers.get(k);
+                            Drivers drivers4 = drivers.get(l);
+                            Drivers drivers5 = drivers.get(m);
 
-//  Pętla po rekordach z drugiego zbioru (constructors)
-                            for (int n = m +1; n <constructors.size(); n++) { // for (Constructors c : constructors) {
+                            // Loop through all combinations of 2 entries from collection2
+                            for (int n = 0; n < constructors.size(); n++) {
+                                Constructors constructors1 = constructors.get(n);
 
-//  Jeśli cena jest mniejsza lub równa 100, dodaj kombinację do listy
+                                int sum = drivers1.getPoints() + drivers2.getPoints() + drivers3.getPoints() + drivers4.getPoints() + drivers5.getPoints() + constructors1.getPoints();
 
-        if (drivers.get(i).getPrice() + drivers.get(j).getPrice() + drivers.get(k).getPrice() + drivers.get(l).getPrice() + drivers.get(m).getPrice() + constructors.get(n).getPrice() <= 100) {
-            List<Object> combination = new ArrayList<>();
-            combination.add(drivers.get(i));
-            combination.add(drivers.get(j));
-            combination.add(drivers.get(k));
-            combination.add(drivers.get(l));
-            combination.add(drivers.get(m));
-            combination.add(constructors.get(n));
-            combinations.add(combination);
+                                // Do something with the combination of 5 entries and check the sum of the price fields is less than or equal to 100.0
+                                if (drivers1.getPrice() + drivers2.getPrice() + drivers3.getPrice() + drivers4.getPrice() + drivers5.getPrice() + constructors1.getPrice() <= 100.0) {
+                                    if (sum > maxSum) {
+                                        // Update the maximum sum and the corresponding combination
+                                        maxSum = sum;
+                                        bestCombination =
+                                             "\n" + drivers1.getName() + " (Points: " + drivers1.getPoints() + " Price: " + drivers1.getPrice() + ")\n" +
+                                                    drivers2.getName() + " (Points: " + drivers2.getPoints() + " Price: " + drivers2.getPrice() + ")\n" +
+                                                    drivers3.getName() + " (Points: " + drivers3.getPoints() + " Price: " + drivers3.getPrice() + ")\n" +
+                                                    drivers4.getName() + " (Points: " + drivers4.getPoints() + " Price: " + drivers4.getPrice() + ")\n" +
+                                                    drivers5.getName() + " (Points: " + drivers5.getPoints() + " Price: " + drivers5.getPrice() + ")\n" +
+                                                    constructors1.getName() + " (Points: " + constructors1.getPoints() + " Price: " + constructors1.getPrice() + ")\n";
+
+                                        price = (drivers1.getPrice() + drivers2.getPrice() + drivers3.getPrice() + drivers4.getPrice() + drivers5.getPrice() + constructors1.getPrice());
+
+                                }
+                            }
                         }
                     }
                 }
             }
         }
-
-// Znajdź kombinację z największą ilością punktów
-        List<Object> bestCombination = null;
-        int bestPoints = 0;
-        for (List<Object> combination : combinations) {
-            int points = 0;
-            for (Object o : combination) {
-                if (o instanceof Drivers) {
-                    points += ((Drivers) o).getPoints();
-                } else if (o instanceof Constructors) {
-                    points += ((Constructors) o).getPoints();
-                }
-            }
-            if (points > bestPoints) {
-                bestCombination = combination;
-                bestPoints = points;
-            }
-        }
-
-        // Wypisanie wybranej kombinacji
-        System.out.println("Wybrana kombinacja: " + bestCombination);
     }
-        }
-    }
+        // Print the maximum sum and the corresponding combination
+        System.out.println("The best combination: " + bestCombination);
+        System.out.println("Maximum sum of points: " + maxSum);
+        System.out.println("Total price: " + price);
+}
 }
