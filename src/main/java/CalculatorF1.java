@@ -19,7 +19,7 @@ public class CalculatorF1 {
         Drivers Alonso = new Drivers("Alonso", 2, 12.2);
         Drivers Sargent = new Drivers("Sargent", 17, 11.4);
         Drivers Bottas = new Drivers("Bottas", 15, 9.6);
-        Drivers Stroll = new Drivers("Stroll", 0, 9.0);
+        Drivers Stroll = new Drivers("Stroll", 300, 9.0);
         Drivers Guanyu = new Drivers("Guanyu", 200, 8.4);
         Drivers Tsunoda = new Drivers("Tsunoda", 200, 8.3);
         Drivers Albon = new Drivers("Albon", 200, 7.8);
@@ -36,7 +36,7 @@ public class CalculatorF1 {
         Constructors Alpine = new Constructors("Alpine", 28, 13.9);
         Constructors AstonMartin = new Constructors("AstonMartin", 30, 11.0);
         Constructors AlphaTauri = new Constructors("AlphaTauri", 25, 10.1);
-        Constructors AlfaRomeo = new Constructors("AlfaRomeo", 20, 8.7);
+        Constructors AlfaRomeo = new Constructors("AlfaRomeo", 200, 8.7);
         Constructors Williams = new Constructors("Williams", 100, 6.5);
         Constructors Hass = new Constructors("Hass", 100, 6.4);
 
@@ -64,8 +64,8 @@ public class CalculatorF1 {
                 AlphaTauri,
                 Hass);
 
-        int maxSum = 0;
-        double price = 0.0;
+        int maxSumPoints = 0;
+        double minSumPrice = 0;
         String bestCombination = "";
 
         // Loop through all combinations of 3 entries from collection1
@@ -84,13 +84,15 @@ public class CalculatorF1 {
                             for (int n = 0; n < constructors.size(); n++) {
                                 Constructors constructors1 = constructors.get(n);
 
-                                int sum = drivers1.getPoints() + drivers2.getPoints() + drivers3.getPoints() + drivers4.getPoints() + drivers5.getPoints() + constructors1.getPoints();
+                                int sumPoints = drivers1.getPoints() + drivers2.getPoints() + drivers3.getPoints() + drivers4.getPoints() + drivers5.getPoints() + constructors1.getPoints();
+                                double sumPrice = drivers1.getPrice() + drivers2.getPrice() + drivers3.getPrice() + drivers4.getPrice() + drivers5.getPrice() + constructors1.getPrice();
 
                                 // Do something with the combination of 5 entries and check the sum of the price fields is less than or equal to 100.0
-                                if (drivers1.getPrice() + drivers2.getPrice() + drivers3.getPrice() + drivers4.getPrice() + drivers5.getPrice() + constructors1.getPrice() <= 100.0) {
-                                    if (sum > maxSum) {
+                                if (sumPrice <= 100.0) {
+                                    if (sumPoints > maxSumPoints || (sumPoints == maxSumPoints && sumPrice < minSumPrice)) {
                                         // Update the maximum sum and the corresponding combination
-                                        maxSum = sum;
+                                            maxSumPoints = sumPoints;
+                                            minSumPrice = sumPrice;
                                         bestCombination =
                                              "\n" + drivers1.getName() + " (Points: " + drivers1.getPoints() + " Price: " + drivers1.getPrice() + ")\n" +
                                                     drivers2.getName() + " (Points: " + drivers2.getPoints() + " Price: " + drivers2.getPrice() + ")\n" +
@@ -99,7 +101,7 @@ public class CalculatorF1 {
                                                     drivers5.getName() + " (Points: " + drivers5.getPoints() + " Price: " + drivers5.getPrice() + ")\n" +
                                                     constructors1.getName() + " (Points: " + constructors1.getPoints() + " Price: " + constructors1.getPrice() + ")\n";
 
-                                        price = (drivers1.getPrice() + drivers2.getPrice() + drivers3.getPrice() + drivers4.getPrice() + drivers5.getPrice() + constructors1.getPrice());
+//                                        priceSum = (drivers1.getPrice() + drivers2.getPrice() + drivers3.getPrice() + drivers4.getPrice() + drivers5.getPrice() + constructors1.getPrice());
 
                                 }
                             }
@@ -111,7 +113,7 @@ public class CalculatorF1 {
     }
         // Print the maximum sum and the corresponding combination
         System.out.println("The best combination: " + bestCombination);
-        System.out.println("Maximum sum of points: " + maxSum);
-        System.out.println("Total price: " + price);
+        System.out.println("Maximum sum of points: " + maxSumPoints);
+        System.out.println("Total price: " + (float) minSumPrice);
 }
 }
