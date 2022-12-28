@@ -114,6 +114,6 @@ public class CalculatorF1 {
         // Print the maximum sum and the corresponding combination
         System.out.println("The best combination: " + bestCombination);
         System.out.println("Maximum sum of points: " + maxSumPoints);
-        System.out.println("Total price: " + (float) minSumPrice);
+//        System.out.println("Total price: " + (float) minSumPrice);
 }
 }
