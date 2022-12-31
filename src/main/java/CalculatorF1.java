@@ -6,39 +6,39 @@ public class CalculatorF1 {
 
 //  Drivers
 
-        Drivers Verstappen = new Drivers("Verstappen", 73, 30.5);
-        Drivers Hamilton = new Drivers("Hamilton", 73, 30.0);
-        Drivers Russell = new Drivers("Russell", 65, 23.7);
-        Drivers Leclerc = new Drivers("Leclerc", 65, 19.0);
-        Drivers Perez = new Drivers("Perez", 19, 18.3);
-        Drivers Sainz = new Drivers("Sainz", 14, 17.2);
-        Drivers Norris = new Drivers("Norris", 65, 15.8);
-        Drivers Piastri = new Drivers("Piastri", 80, 13.5);
-        Drivers Gasly = new Drivers("Gasly", 19, 12.9);
-        Drivers Ocon = new Drivers("Ocon", 9, 12.4);
-        Drivers Alonso = new Drivers("Alonso", 2, 12.2);
-        Drivers Sargent = new Drivers("Sargent", 17, 11.4);
-        Drivers Bottas = new Drivers("Bottas", 15, 9.6);
-        Drivers Stroll = new Drivers("Stroll", 300, 9.0);
-        Drivers Guanyu = new Drivers("Guanyu", 200, 8.4);
-        Drivers Tsunoda = new Drivers("Tsunoda", 200, 8.3);
-        Drivers Albon = new Drivers("Albon", 200, 7.8);
-        Drivers de_Vries = new Drivers("de_Vries", 200, 6.6);
-        Drivers Hülkenberg = new Drivers("Hülkenberg", 200, 6.2);
-        Drivers Magnussen = new Drivers("Magnussen", 200, 6.1);
+        Drivers Verstappen = new Drivers("Verstappen", 48, 30.5);
+        Drivers Hamilton = new Drivers("Hamilton", 42, 30.0);
+        Drivers Russell = new Drivers("Russell", 37, 23.7);
+        Drivers Leclerc = new Drivers("Leclerc", 40, 19.0);
+        Drivers Perez = new Drivers("Perez", 34, 18.3);
+        Drivers Sainz = new Drivers("Sainz", 34, 17.2);
+        Drivers Norris = new Drivers("Norris", 17, 15.8);
+        Drivers Piastri = new Drivers("Piastri", 22, 13.5);
+        Drivers Gasly = new Drivers("Gasly", 16, 12.9);
+        Drivers Ocon = new Drivers("Ocon", 28, 12.4);
+        Drivers Alonso = new Drivers("Alonso", 23, 12.2);
+        Drivers Sargent = new Drivers("Sargent", 2, 11.4);
+        Drivers Bottas = new Drivers("Bottas", 11, 9.6);
+        Drivers Stroll = new Drivers("Stroll", 0, 9.0);
+        Drivers Guanyu = new Drivers("Guanyu", 4, 8.4);
+        Drivers Tsunoda = new Drivers("Tsunoda", 0, 8.3);
+        Drivers Albon = new Drivers("Albon", 8, 7.8);
+        Drivers de_Vries = new Drivers("de_Vries", 10, 6.6);
+        Drivers Hülkenberg = new Drivers("Hülkenberg", 1, 6.2);
+        Drivers Magnussen = new Drivers("Magnussen", 7, 6.1);
 
 //  Constructors
 
-        Constructors Mercedes = new Constructors("Mercedes", 32, 33.7);
-        Constructors RedBull = new Constructors("RedBull", 32, 32.3);
-        Constructors Ferrari = new Constructors("Ferrari", 32, 25.8);
-        Constructors McLaren = new Constructors("McLaren", 25, 17.6);
-        Constructors Alpine = new Constructors("Alpine", 28, 13.9);
-        Constructors AstonMartin = new Constructors("AstonMartin", 30, 11.0);
-        Constructors AlphaTauri = new Constructors("AlphaTauri", 25, 10.1);
-        Constructors AlfaRomeo = new Constructors("AlfaRomeo", 200, 8.7);
-        Constructors Williams = new Constructors("Williams", 100, 6.5);
-        Constructors Hass = new Constructors("Hass", 100, 6.4);
+        Constructors Mercedes = new Constructors("Mercedes", 33, 33.7);
+        Constructors RedBull = new Constructors("RedBull", 43, 32.3);
+        Constructors Ferrari = new Constructors("Ferrari", 38, 25.8);
+        Constructors McLaren = new Constructors("McLaren", 15, 17.6);
+        Constructors Alpine = new Constructors("Alpine", 8, 13.9);
+        Constructors AstonMartin = new Constructors("AstonMartin", 2, 11.0);
+        Constructors AlphaTauri = new Constructors("AlphaTauri", 4, 10.1);
+        Constructors AlfaRomeo = new Constructors("AlfaRomeo", 7, 8.7);
+        Constructors Williams = new Constructors("Williams", 0, 6.5);
+        Constructors Hass = new Constructors("Hass", 1, 6.4);
 
         List<Drivers> drivers = List.of(
                 Verstappen, Perez,
@@ -89,6 +89,9 @@ public class CalculatorF1 {
 
                                 // Do something with the combination of 5 entries and check the sum of the price fields is less than or equal to 100.0
                                 if (sumPrice <= 100.0) {
+                                    System.out.println(bestCombination);
+                                    System.out.println("Sum of points: " + sumPoints);
+                                    System.out.println("Total price: " + (float) sumPrice + "\n");
                                     if (sumPoints > maxSumPoints || (sumPoints == maxSumPoints && sumPrice < minSumPrice)) {
                                         // Update the maximum sum and the corresponding combination
                                             maxSumPoints = sumPoints;
